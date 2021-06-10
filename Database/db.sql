@@ -11,7 +11,7 @@ CREATE TABLE Vehicles (
 	license varchar(30) not null,
     image varchar(1000) not null,
     created_at timestamp default current_timestamp,
-    primary key PK_codeVehicle (codeVehicle)
+    primary key PK_codeVehicle (id)
 );
 
 DESCRIBE Vehicles;
