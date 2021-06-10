@@ -1,0 +1,16 @@
+<div class="col-md-4" *ngFor="let car of cars">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            {{car.brand}} ({{car.status}})
+            <button class="btn btn-danger" (click)="deleteCar(car.id)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <img [src]="car.image" class="card-img-top" alt="car-image">
+        <div class="card-body">
+            <p>{{car.model}} {{car.year_}}</p>
+            <p fw-bold>{{car.license}}</p>
+            <a [routerLink]="['/cars/edit', car.id]" class="btn btn-info btn-block">EDIT</a>
+        </div>
+    </div>
+</div>

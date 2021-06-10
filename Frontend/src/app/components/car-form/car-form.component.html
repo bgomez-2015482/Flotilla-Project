@@ -1,0 +1,48 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="brand" [(ngModel)]="car.brand" placeholder="Marca" class="form-control"
+                        autofocus>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="model" [(ngModel)]="car.model" placeholder="Modelo" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <input type="number" name="year-" [(ngModel)]="car.year_" placeholder="Año" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="license" [(ngModel)]="car.license" placeholder="Licencia"
+                        pattern="[^\w{1,3}\d{3,3}\w{3,3}$]" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <input type="url" name="image" [(ngModel)]="car.image" placeholder="Imagen" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="status" [(ngModel)]="car.status" placeholder="Estado" class="form-control">
+                </div>
+
+                <button class="btn btn-success btn-block" (click)="edit ? updateCar() : onSubmit()">
+                    Guardar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <img [src]="car.image == '' ? '/assets/img/no-img.png' : car.image" class="card-img-top">
+        <h3>{{car.brand == '' ? 'Marca del vehiculo' : car.brand }}</h3>
+        <p>{{car.model == '' ? 'Modelo del vehiculo' : car.model}} {{car.year_}}</p>
+        <p>{{car.license == '' ? 'Licencia del vehiculo' : car.license}}</p>
+        <p>{{car.status == '' ? 'Estado del vehiculo' : car.status}}</p>
+        <p>{{car.created_at | date: 'yyyy-MM-dd'}}</p>
+    </div>
+</div>
