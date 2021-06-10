@@ -3,7 +3,7 @@ CREATE DATABASE DBFlotilla_Vehiculos;
 USE DBFlotilla_Vehiculos;
 
 CREATE TABLE Vehicles (
-	codeVehicle int not null auto_increment,
+	 id int not null auto_increment,
     brand varchar(20) not null,
     status varchar(20) not null,
     model varchar(10) not null,
@@ -18,4 +18,4 @@ DESCRIBE Vehicles;
 
 SELECT * FROM Vehicles;
 
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+-- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY ''; --
